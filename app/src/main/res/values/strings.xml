@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">SLiMS Scanner</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_scanner">ScannerActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_logout">Logout</string>
+    <string name="nav_stock_take">Stock Take</string>
+    <string name="nav_eksemplar_tersedia">Eksemplar Tersedia</string>
+    <string name="nav_eksemplar_hilang">Eksemplar Hilang</string>
+    <string name="nav_laporan_inventarisasi">Laporan Inventarisasi</string>
+</resources>

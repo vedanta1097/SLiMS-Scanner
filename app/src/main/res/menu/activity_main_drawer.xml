@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/nav_stock_take"
+        android:icon="@drawable/ic_menu_scan"
+        android:title="@string/nav_stock_take" />
+    <item
+        android:id="@+id/nav_item_exist"
+        android:icon="@drawable/ic_menu_list"
+        android:title="@string/nav_eksemplar_tersedia" />
+    <item
+        android:id="@+id/nav_current_lost_item"
+        android:icon="@drawable/ic_menu_item_lost"
+        android:title="@string/nav_eksemplar_hilang" />
+    <item
+        android:id="@+id/nav_stock_take_report"
+        android:icon="@drawable/ic_menu_pie_chart"
+        android:title="@string/nav_laporan_inventarisasi" />
+
+</menu>

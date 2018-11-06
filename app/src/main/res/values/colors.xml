@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#194c66</color>
+    <color name="colorPrimaryDark">#00374e</color>
+    <!--<color name="colorAccent">#ffe3c0</color>-->
+    <color name="colorAccent">#ffe3c0</color>
+    <color name="colorWhite">#ffffff</color>
+    <color name="actionbar_opacity">#33000000</color>
+    <color name="colorGrey">#E0E0E0</color>
+    <color name="colorBlack">#1e1e1e</color>
+    <color name="buttonGold">#f7e671</color>
+    <color name="buttonDarkGold">#bca922</color>
+    <color name="colorItemCodeExist">#009e41</color>
+    <color name="colorItemCodeLost">#d50000</color>
+    <color name="pieChartItemExist">#00e676</color>
+    <color name="pieChartItemLost">#ff5252</color>
+</resources>
