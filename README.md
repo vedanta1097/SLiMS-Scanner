@@ -1,6 +1,5 @@
 # SLiMS-Scanner
-Barcode scanner app for stock-taking on Senayan Library Management System<br/>
-https://slims.web.id/web/ <br/>
+Barcode scanner app for stock-taking on <a href="https://slims.web.id/web/">Senayan Library Management System</a><br/>
 replace api folder in slims with this project's api folder
 
 ## Screenshots
