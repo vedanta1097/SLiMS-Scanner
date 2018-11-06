@@ -2,8 +2,7 @@
 <resources>
     <color name="colorPrimary">#194c66</color>
     <color name="colorPrimaryDark">#00374e</color>
-    <!--<color name="colorAccent">#ffe3c0</color>-->
-    <color name="colorAccent">#ffe3c0</color>
+    <color name="colorAccent">#b17c5f</color>
     <color name="colorWhite">#ffffff</color>
     <color name="actionbar_opacity">#33000000</color>
     <color name="colorGrey">#E0E0E0</color>
