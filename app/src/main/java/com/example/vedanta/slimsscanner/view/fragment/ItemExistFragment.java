@@ -25,12 +25,15 @@ public class ItemExistFragment extends Fragment {
 
     private RecyclerView mRecyclerView;
     private LinearLayout mProgressBar;
+    private RestManager mRestManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_item_exist, container, false);
         getActivity().setTitle(getString(R.string.nav_eksemplar_tersedia));
+
+        mRestManager = new RestManager();
 
         mProgressBar = rootView.findViewById(R.id.progressBar);
         mProgressBar.setVisibility(View.INVISIBLE);
@@ -48,8 +51,7 @@ public class ItemExistFragment extends Fragment {
         mRecyclerView.setVisibility(View.INVISIBLE);
         mProgressBar.setVisibility(View.VISIBLE);
 
-        RestManager restManager = new RestManager();
-        Call<List<Item>> call = restManager.getDataService().getItemExist();
+        Call<List<Item>> call = mRestManager.getDataService().getItemExist();
 
         call.enqueue(new Callback<List<Item>>() {
             @Override

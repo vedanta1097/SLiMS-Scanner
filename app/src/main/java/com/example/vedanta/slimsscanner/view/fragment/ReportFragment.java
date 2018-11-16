@@ -31,12 +31,15 @@ public class ReportFragment extends Fragment {
     private TextView textViewName, textViewStartDate, textViewTotalItem, textViewItemLost, textViewItemLoan;
     private PieChart chart;
     private LinearLayout mContent, mProgressBar;
+    private RestManager mRestManager;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_report, container, false);
         getActivity().setTitle(getString(R.string.nav_laporan_inventarisasi));
+
+        mRestManager = new RestManager();
 
         mContent = rootView.findViewById(R.id.linear_layout_content);
         mProgressBar = rootView.findViewById(R.id.progressBar);
@@ -57,7 +60,6 @@ public class ReportFragment extends Fragment {
     }
 
     private void getReport() {
-        RestManager mRestManager = new RestManager();
         Call<Report> call = mRestManager.getDataService().getReport();
         call.enqueue(new Callback<Report>() {
             @Override
