@@ -15,12 +15,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
 
 	if ($item_info['status'] == 'l') 
 	{
-		$response['error'] = true;
 		$response['message'] = "Item " . $itemCode . " is currently on LOAN.";
 	}
 	else if ($item_info['status'] == 'e')
 	{
-		$response['error'] = true;
 		$response['message'] = "Item " . $itemCode . " is already SCANNED.";
 	}
 	else if ($item_info['status'] == 'm')
@@ -37,7 +35,6 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
 				SET total_item_lost=total_item_lost-1 
 				WHERE is_active=1");
 
-		$response['error'] = false;	
 		$response['message'] = "Item " . $itemCode . " successfully added.";
 	}
 	echo json_encode($response);

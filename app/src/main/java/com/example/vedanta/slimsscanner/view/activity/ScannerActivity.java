@@ -81,9 +81,9 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
             public void onResponse(Call<StockTakeItem> call, Response<StockTakeItem> response) {
                 if (response.isSuccessful()) {
                     StockTakeItem itemInfo = response.body();
-                    createAlertDialog(itemInfo.isError(), itemInfo.getMessage()).show();
+                    createAlertDialog(false, itemInfo.getMessage()).show();
                 } else {
-                    Toast.makeText(getApplicationContext(), "error code: " + response.code(), Toast.LENGTH_LONG).show();
+                    createAlertDialog(true, "error code: " + response.code()).show();
                 }
             }
 
@@ -96,7 +96,7 @@ public class ScannerActivity extends AppCompatActivity implements ZXingScannerVi
 
     private Dialog createAlertDialog(boolean error, String message) {
         String alertTitle;
-        alertTitle = error ? "Error" : "Success";
+        alertTitle = error ? "Scan Error" : "Scan Success";
         return new android.app.AlertDialog.Builder(this)
                 .setTitle(alertTitle)
                 .setMessage(message)

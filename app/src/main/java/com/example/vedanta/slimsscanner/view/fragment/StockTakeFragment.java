@@ -78,10 +78,10 @@ public class StockTakeFragment extends Fragment {
             public void onResponse(Call<StockTakeItem> call, Response<StockTakeItem> response) {
                 if (response.isSuccessful()) {
                     StockTakeItem itemInfo = response.body();
-                    createAlertDialog(itemInfo.isError(), itemInfo.getMessage()).show();
+                    createAlertDialog(false, itemInfo.getMessage()).show();
                     itemCodeEditText.setText("");
                 } else {
-                    Toast.makeText(getContext(), "error code: " + response.code(), Toast.LENGTH_LONG).show();
+                    createAlertDialog(true, "error code: " + response.code()).show();
                 }
             }
 
