@@ -91,6 +91,7 @@ public class MainActivity extends AppCompatActivity
             mPreferences.edit().remove(LOGIN_REAL_NAME).apply();
             Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
             startActivity(intent);
+            finish();
             return true;
         }
         return super.onOptionsItemSelected(item);
