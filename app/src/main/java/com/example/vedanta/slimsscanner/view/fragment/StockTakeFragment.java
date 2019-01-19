@@ -51,7 +51,7 @@ public class StockTakeFragment extends Fragment {
                 SharedPreferences prefs = getActivity().getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
                 String realName = prefs.getString(LOGIN_REAL_NAME, "");
 
-                if (TextUtils.isEmpty(itemCodeEditText.getText()) || realName.equals("")) {
+                if (TextUtils.isEmpty(itemCodeEditText.getText())) {
                     Toast.makeText(getContext(), "Kode buku harus diisi.", Toast.LENGTH_SHORT).show();
                 } else {
                     String itemCode = itemCodeEditText.getText().toString();
