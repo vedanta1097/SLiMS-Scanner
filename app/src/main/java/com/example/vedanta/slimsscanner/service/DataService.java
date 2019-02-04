@@ -13,6 +13,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
+import retrofit2.http.Query;
 
 public interface DataService {
 
@@ -31,7 +32,9 @@ public interface DataService {
     );
 
     @GET("stock_take_item_exist.php")
-    Call<List<Item>> getItemExist();
+    Call<List<Item>> getItemExist(
+            @Query("real_name") String realName
+    );
 
     @GET("stock_take_item_lost.php")
     Call<List<Item>> getItemLost();

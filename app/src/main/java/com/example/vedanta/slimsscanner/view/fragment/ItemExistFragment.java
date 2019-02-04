@@ -1,5 +1,6 @@
 package com.example.vedanta.slimsscanner.view.fragment;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
@@ -20,6 +21,10 @@ import java.util.List;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static android.content.Context.MODE_PRIVATE;
+import static com.example.vedanta.slimsscanner.util.Constant.LOGIN_REAL_NAME;
+import static com.example.vedanta.slimsscanner.util.Constant.sharedPrefFile;
 
 public class ItemExistFragment extends Fragment {
 
@@ -51,7 +56,10 @@ public class ItemExistFragment extends Fragment {
         mRecyclerView.setVisibility(View.INVISIBLE);
         mProgressBar.setVisibility(View.VISIBLE);
 
-        Call<List<Item>> call = mRestManager.getDataService().getItemExist();
+        SharedPreferences prefs = getContext().getSharedPreferences(sharedPrefFile, MODE_PRIVATE);
+        String realName = prefs.getString(LOGIN_REAL_NAME, "");
+
+        Call<List<Item>> call = mRestManager.getDataService().getItemExist(realName);
 
         call.enqueue(new Callback<List<Item>>() {
             @Override
