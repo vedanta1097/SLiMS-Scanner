@@ -8,18 +8,23 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
 	$real_name = $_POST['real_name'];
 	$itemCode = $_POST['item_code'];
 
-	$_item_q = mysqli_query($conn, "SELECT status 
+	//querynya tambahkan checked_by dan last_update
+	$_item_q = mysqli_query($conn, "SELECT status, checked_by, last_update
 								FROM stock_take_item 
 								WHERE item_code = '{$itemCode}'");
 	$item_info = $_item_q->fetch_assoc();
 
 	if ($item_info['status'] == 'l') 
 	{
+		$response['error'] = true;
 		$response['message'] = "Item " . $itemCode . " is currently on LOAN.";
 	}
 	else if ($item_info['status'] == 'e')
 	{
-		$response['message'] = "Item " . $itemCode . " is already SCANNED.";
+		$response['error'] = true;
+		//tambahkan message checked_by dan last_update
+		$response['message'] = "Item " . $itemCode . " is already SCANNED \nby " . $item_info['checked_by'] 
+								. "\nat " . $item_info['last_update'];
 	}
 	else if ($item_info['status'] == 'm')
 	{
@@ -35,6 +40,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST')
 				SET total_item_lost=total_item_lost-1 
 				WHERE is_active=1");
 
+		$response['error'] = false;	
 		$response['message'] = "Item " . $itemCode . " successfully added.";
 	}
 	echo json_encode($response);
